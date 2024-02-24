@@ -1,9 +1,9 @@
 export interface IData  {
     title: string;
-    thumbnail: {
-        trending: {
-            small: string;
-            large: string;
+    thumbnail?: {
+        trending?: {
+            small?: string;
+            large?: string;
         },
         regular: {
             small: string;
@@ -11,9 +11,9 @@ export interface IData  {
             large: string;
         }
     },
-    year: number;
-    category: string;
-    rating: string;
-    isBookmarked: boolean;
+    year?: number;
+    category?: string;
+    rating?: string;
+    isBookmarked?: boolean;
     isTrending: boolean;
 }

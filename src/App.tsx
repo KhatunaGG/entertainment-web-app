@@ -16,6 +16,7 @@ type GlobalStateType = {
   bookmarked: boolean;
   handleBookmarcked: (title: string) => void;
   newData: IData[];
+  // filtredData: IData
   getInputValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
   input: string;
 
@@ -25,22 +26,33 @@ export const GlobalState = createContext<GlobalStateType | null>(null);
 
 const App: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  // const [data, setData] = useState(jsonData);
   const [input, setInput] = useState('');
-  // const [newData, setNewData] = useState(data.filter((item) => item.title).filter((item) => item.title.startsWith(input)));
-  const [newData, setNewData] = useState(data.filter((item) => item.title))
  
+  const [newData, setNewData] = useState<IData[]>(data)
+
  
 
-  
 
-  
+
+
+
+
   const getInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
+    // if(input.length > 0) {
+    //   const www = newData.filter((item) => item.title.startsWith(input))
+    //   return www
+    // } 
+
+    // setInput(newData.filter((item) => item.title.startsWith(e.target.value)))
+    
+   
   };
 
+  console.log(input)
+
   const handleBookmarcked = (title: string) => {
-    
+
     setNewData(
       newData.map((item) => {
         if (item.title === title && item.isBookmarked === false) {
@@ -53,6 +65,8 @@ const App: React.FC = () => {
     );
 
 
+
+  
 
 
   };
@@ -83,13 +97,13 @@ const App: React.FC = () => {
       <GlobalState.Provider
         value={{
           screenWidth,
-          setBookmarked: () => {}, 
-          bookmarked: false, 
+          setBookmarked: () => { },
+          bookmarked: false,
           handleBookmarcked,
           newData,
           getInputValue,
           input,
-         
+
         }}
       >
         <RouterProvider router={router}></RouterProvider>

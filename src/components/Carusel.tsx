@@ -24,7 +24,7 @@ const Carusel = () => {
     return (
         <section className='mr-[-100px]'>
             <Swiper
-                spaceBetween={1}
+                spaceBetween={14}
                 slidesPerView={screenWidth > 768 ? 2.5 : 1.5}
                 autoplay={{
                     delay: 2500,

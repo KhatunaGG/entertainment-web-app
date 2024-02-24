@@ -13,8 +13,8 @@ const Bookmark = () => {
     <div className='w-[91.46%] text-sm md:text-[32px] mb-4 md:mb-6 lg:mb-8'>
       <h2 className='text-sm md:text-[32px] mb-4 md:mb-6'>Bookmarked</h2>
       <div className="grid grid-cols-2 gap-8  md:grid-cols-3 lg:grid-cols-4">
-        {newData.filter((el) => el.isBookmarked === true).map((item) => (
-          <Card dataItem={item} />
+        {newData.filter((el) => el.isBookmarked === true).map((item, i) => (
+          <Card key={i} dataItem={item} />
         ))}
       </div>
     </div>
