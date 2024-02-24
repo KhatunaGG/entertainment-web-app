@@ -19,7 +19,8 @@ type GlobalStateType = {
   // filtredData: IData
   getInputValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
   input: string;
-
+  setIconColor: (num: number) => void
+  icon: number;
 };
 
 export const GlobalState = createContext<GlobalStateType | null>(null);
@@ -28,6 +29,11 @@ const App: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [input, setInput] = useState('');
   const [newData, setNewData] = useState<IData[]>(data)
+  const [icon, setIcon] = useState(0)
+
+  const setIconColor = (num: number) => {
+    setIcon(num)
+  }
 
 
   const getInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -72,7 +78,7 @@ const App: React.FC = () => {
     )
   );
 
-  
+
   return (
     <div className='App w-full h-screen flex flex-col items-center bg-[#10141E] '>
       <GlobalState.Provider
@@ -84,7 +90,8 @@ const App: React.FC = () => {
           newData,
           getInputValue,
           input,
-
+          setIconColor,
+          icon
         }}
       >
         <RouterProvider router={router}></RouterProvider>
