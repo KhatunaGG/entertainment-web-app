@@ -27,27 +27,13 @@ export const GlobalState = createContext<GlobalStateType | null>(null);
 const App: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [input, setInput] = useState('');
- 
-  // const [newData, setNewData] = useState<IData[]>(data.filter((el) => el.title.startsWith(input)))
   const [newData, setNewData] = useState<IData[]>(data)
-
- 
-
-
-
-
 
 
   const getInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
-
-
-   return newData.filter((item) => item.title.startsWith(e.target.value))
-    
-   
   };
 
-  console.log(input)
 
   const handleBookmarcked = (title: string) => {
 
@@ -61,13 +47,8 @@ const App: React.FC = () => {
         return item;
       })
     );
-
-
-
-  
-
-
   };
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -78,6 +59,7 @@ const App: React.FC = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -90,6 +72,7 @@ const App: React.FC = () => {
     )
   );
 
+  
   return (
     <div className='App w-full h-screen flex flex-col items-center bg-[#10141E] '>
       <GlobalState.Provider

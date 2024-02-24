@@ -1,4 +1,3 @@
-
 import { useContext } from 'react'
 import { GlobalState } from '../App'
 
@@ -11,6 +10,7 @@ const Card = ({ dataItem }: any) => {
     const context = useContext(GlobalState);
     if (!context) return null;
     const { screenWidth, handleBookmarcked } = context;
+
 
     return (
         <div key={dataItem.title} className="col-span-1 flex flex-col">
