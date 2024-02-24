@@ -16,7 +16,6 @@ type GlobalStateType = {
   bookmarked: boolean;
   handleBookmarcked: (title: string) => void;
   newData: IData[];
-  // filtredData: IData
   getInputValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
   input: string;
   setIconColor: (num: number) => void
