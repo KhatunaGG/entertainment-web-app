@@ -30,7 +30,7 @@ const Carusel = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                {newData.filter((el) => el.thumbnail)
+                {newData.filter((el) => el.thumbnail).filter((el) => el.thumbnail?.trending)
                 .map((item) => (
                     <SwiperSlide key={item.title} >
                         <div className="slide w-full flex mb-2 flex-row md:mb-10">
