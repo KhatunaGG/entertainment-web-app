@@ -28,6 +28,7 @@ const App: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [input, setInput] = useState('');
  
+  // const [newData, setNewData] = useState<IData[]>(data.filter((el) => el.title.startsWith(input)))
   const [newData, setNewData] = useState<IData[]>(data)
 
  
@@ -39,12 +40,9 @@ const App: React.FC = () => {
 
   const getInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
-    // if(input.length > 0) {
-    //   const www = newData.filter((item) => item.title.startsWith(input))
-    //   return www
-    // } 
 
-    // setInput(newData.filter((item) => item.title.startsWith(e.target.value)))
+
+   return newData.filter((item) => item.title.startsWith(e.target.value))
     
    
   };

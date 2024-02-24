@@ -18,7 +18,7 @@ const Root = () => {
       <header className="nuvBar w-full flex item-center bg-[var(--semi-dark-blue)] px-[3.19%] md:w-[91.46%] 
       items-center justify-between mb-6 md:mb-[33px] md:rounded-[10px] md:mt-[23px] 
       
-      lg:w-[96px] lg:h-[80%] lg:flex-col lg:py-9 lg:px-0 lg:mb-0 lg:ml-3 ">
+      lg:w-[96px] lg:h-[800px] lg:flex-col lg:py-9 lg:px-0 lg:mb-0 lg:ml-3 ">
         <img className='logo' src="/assets/logo.svg" alt="" />
         <ul className='link-ul flex flex-row items-center gap-6 py-[18px] lg:flex-col lg:gap-10 lg:h-full lg:pt-[74px]'>
           <li>
